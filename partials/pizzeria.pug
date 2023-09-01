@@ -1,0 +1,15 @@
+include ../assets/mixins.pug
+
+section#pizzeria
+  h2 La Pizzeria
+  p L'art de la pizza atteint de nouveaux sommets à La Kasa Pizza. Nos pizzas sont confectionnées avec des ingrédients frais et de première qualité, soigneusement sélectionnés pour garantir une explosion de saveurs à chaque bouchée. De la croûte croustillante à la généreuse garniture, chaque pizza est une œuvre d'art gastronomique. Que vous soyez un amateur de classiques italiens ou que vous cherchiez des combinaisons audacieuses inspirées des îles, notre pizzeria saura éveiller vos papilles.
+
+#cards-container 
+
+//- - let pizzasData = JSON.parse(JSON.stringify(fetch('/assets/datas/pizzas.json').then(response => response.json())))
+script.
+  fetch('/assets/datas/pizzas.json').then(response => response.json()).then(data => {pizzasData = data;});
+  localStorage.setItem("pizzasData", fetch('/assets/datas/pizzas.json').then(response => response.json()));
+  let pizzasData = localStorage.getItem(pizzasData);
+  console.log(pizzasData);
+//- p #{pizzaData}

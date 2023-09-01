@@ -1,0 +1,24 @@
+script.
+  var nb = 2;
+script!="(async function fetchData(){var pizzasData = [];  fetch('/assets/datas/pizzas.json').then(response => response.json()).then(data => {pizzasData = data;   localStorage.setItem(pizzasData, JSON.stringify(pizzasData)); return pizzasData});})();(async () => {pizzasData = await fetchData(); console.log(pizzasData)});"
+//- ul
+//-   each pizza in pizzasData
+//-     +card(pizza)
+
+//- script.
+(async function fetchData(){var pizzasData = [];  fetch('/assets/datas/pizzas.json').then(response => response.json()).then(data => {pizzasData = data;   localStorage.setItem(pizzasData, JSON.stringify(pizzasData)); return pizzasData});})();
+//-   (async () => {
+//-     const pizzasData = await fetchData();
+
+//-     pizzasData.forEach(pizza => {
+//-       +card(pizza);
+//-     });
+//-   })();
+//-   async () => {
+//-     const response = await fetch('../assets/datas/pizzas.json');
+//-     const data = await response.json();
+    //- console.log(data);
+    //- localStorage.setItem(data, JSON.stringify(data));
+    return data;
+  }
+  

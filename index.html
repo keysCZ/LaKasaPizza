@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>La Kasa Pizza - Restaurant Pizzeria Bar Exotique</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <header><img src="" alt="Logo LA KASA PIZZA" srcset="">
+      <nav>
+        <ul>
+          <li><a href="#about">À Propos</a></li>
+          <li><a href="#resto">Restaurant</a></li>
+          <li><a href="#pizzeria">Pizzeria</a></li>
+          <li><a href="#bar">Bar</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+    <div class="container-img">
+      <div class="img-content"></div><img class="img" src="/assets/img/main_pizza.jpg" alt="Pizza" srcset="">
+    </div><img>
+    <main class="container">
+      <section id="about">
+        <h2>À Propos de Nous</h2>
+        <p>Chez La Kasa Pizza, nous sommes passionnés par la fusion de deux mondes gustatifs uniques : les délices ensoleillés des îles et l'art traditionnel de la pizza italienne. Notre histoire commence avec un amour pour les voyages et les saveurs exotiques qui ont inspiré notre menu exceptionnel. </p><br>
+        <p>Notre équipe de chefs talentueux travaille méticuleusement pour créer des plats qui évoquent l'ambiance détendue et vibrante des îles, tout en rendant hommage à la perfection de la pizza artisanale. Chaque bouchée que vous prendrez chez nous sera une escapade culinaire qui vous transportera vers des rivages lointains, tout en vous offrant le réconfort intemporel d'une excellente pizza.</p>
+      </section>
+      <ul class="tabs">
+        <li class="tab-header"><a class="tab-link" href="#resto">Restaurant </a></li>
+        <li class="tab-header"><a class="tab-link" href="#pizzeria">Pizzeria</a></li>
+        <li class="tab-header"><a class="tab-link" href="#bar">Bar</a></li>
+        <div class="tab-content">
+          <div class="tab-pane" id="resto">
+            <section id="resto">
+              <h2>Notre Restaurant</h2>
+              <p>Découvrez notre restaurant qui vous transporte immédiatement dans un cadre tropical chaleureux. Des plats raffinés inspirés des îles vous attendent, préparés avec des ingrédients frais et locaux. Venez savourer des moments uniques à La Kasa Pizza.</p>
+            </section>
+          </div>
+          <div class="tab-pane" id="pizzeria">
+            <section id="pizzeria">
+              <h2>La Pizzeria</h2>
+              <p>L'art de la pizza atteint de nouveaux sommets à La Kasa Pizza. Nos pizzas sont confectionnées avec des ingrédients frais et de première qualité, soigneusement sélectionnés pour garantir une explosion de saveurs à chaque bouchée. De la croûte croustillante à la généreuse garniture, chaque pizza est une œuvre d'art gastronomique. Que vous soyez un amateur de classiques italiens ou que vous cherchiez des combinaisons audacieuses inspirées des îles, notre pizzeria saura éveiller vos papilles.</p>
+            </section>
+            <div id="cards-container"> </div>
+            <script>
+              localStorage.setItem("pizzasData", fetch('/assets/datas/pizzas.json').then(response => response.json()));
+              let pizzasData = localStorage.getItem(pizzasData);
+              console.log(pizzasData);
+            </script>
+          </div>
+          <div class="tab-pane" id="bar">
+            <section id="bar">
+              <h2>Notre Bar Exotique</h2>
+              <p>Le bar de La Kasa Pizza est un paradis pour les amateurs de boissons exotiques. Nos mixologues talentueux préparent des cocktails uniques inspirés des îles, en utilisant des ingrédients frais et des saveurs tropicales. Détendez-vous et savourez un moment au bar exotique de vos rêves.</p>
+            </section>
+          </div>
+        </div>
+      </ul>
+      <section id="contact">
+        <h2>Contactez-Nous</h2>
+        <p>Besoin de réserver une table ou d'obtenir des informations supplémentaires ? N'hésitez pas à nous contacter. Notre équipe est disponible pour répondre à toutes vos questions et vous aider à planifier votre prochaine expérience culinaire à La Kasa Pizza.</p>
+        <address>
+          <p><strong>La Kasa Pizza</strong></p>
+          <p>123 Rue des Îles, Paradiseville</p>
+          <p>Téléphone : 0123 456 789</p>
+          <p>Email : info@lakasapizza.com</p>
+        </address>
+      </section>
+      <footer>
+        <p>© 2023 La Kasa Pizza. Tous droits réservés.</p>
+      </footer>
+      <script src="./js/jquery-3.6.0.min.js"> </script>
+      <script src="./js/tabs.js"> </script>
+    </main>
+  </body>
+</html>

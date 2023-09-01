@@ -1,0 +1,13 @@
+mixin card(item)
+  .card
+    .card-image
+      img(src=item.image, alt="")
+    .card-text
+      h2.card-title= item.title
+      p.card-body= item.content
+    .card-price
+      if item.formats
+        ul
+          each format in item.formats
+            li
+            | #{format.taille}: #{formats.prix}

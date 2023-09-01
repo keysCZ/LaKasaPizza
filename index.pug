@@ -1,0 +1,36 @@
+doctype html
+html(lang="fr")
+  include ./partials/head
+  body
+    //- Navbar
+    include ./partials/header
+    //- Fin Navbar
+
+    //- Image d'entrée
+    div.container-img
+        div.img-content
+        img.img(src="/assets/img/main_pizza.jpg", alt="Pizza", srcset="")
+
+    img
+    main.container
+      include ./partials/about
+      ul.tabs
+        li.tab-header
+            a.tab-link(href="#resto") Restaurant 
+        li.tab-header
+            a.tab-link(href="#pizzeria") Pizzeria
+        li.tab-header
+            a.tab-link(href="#bar") Bar
+
+        div.tab-content
+            div.tab-pane#resto
+                include ./partials/resto
+
+            div.tab-pane#pizzeria
+                include ./partials/pizzeria
+
+            div.tab-pane#bar
+                include ./partials/bar
+      include ./partials/contact
+      include ./partials/footer
+  
