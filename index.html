@@ -25,7 +25,7 @@
       <section id="about">
         <h2>À Propos de Nous</h2>
         <p>Chez La Kasa Pizza, nous sommes passionnés par la fusion de deux mondes gustatifs uniques : les délices ensoleillés des îles et l'art traditionnel de la pizza italienne. Notre histoire commence avec un amour pour les voyages et les saveurs exotiques qui ont inspiré notre menu exceptionnel. </p><br>
-        <p>Notre équipe de chefs talentueux travaille méticuleusement pour créer des plats qui évoquent l'ambiance détendue et vibrante des îles, tout en rendant hommage à la perfection de la pizza artisanale. Chaque bouchée que vous prendrez chez nous sera une escapade culinaire qui vous transportera vers des rivages lointains, tout en vous offrant le réconfort intemporel d'une excellente pizza.</p>
+        <p> </p> Notre équipe de chefs talentueux travaille méticuleusement pour créer des plats qui évoquent l'ambiance détendue et vibrante des îles, tout en rendant hommage à la perfection de la pizza artisanale. Chaque bouchée que vous prendrez chez nous sera une escapade culinaire qui vous transportera vers des rivages lointains, tout en vous offrant le réconfort intemporel d'une excellente pizza.
       </section>
       <ul class="tabs">
         <li class="tab-header"><a class="tab-link" href="#resto">Restaurant </a></li>
@@ -43,11 +43,14 @@
               <h2>La Pizzeria</h2>
               <p>L'art de la pizza atteint de nouveaux sommets à La Kasa Pizza. Nos pizzas sont confectionnées avec des ingrédients frais et de première qualité, soigneusement sélectionnés pour garantir une explosion de saveurs à chaque bouchée. De la croûte croustillante à la généreuse garniture, chaque pizza est une œuvre d'art gastronomique. Que vous soyez un amateur de classiques italiens ou que vous cherchiez des combinaisons audacieuses inspirées des îles, notre pizzeria saura éveiller vos papilles.</p>
             </section>
-            <div id="cards-container"> </div>
             <script>
-              localStorage.setItem("pizzasData", fetch('/assets/datas/pizzas.json').then(response => response.json()));
-              let pizzasData = localStorage.getItem(pizzasData);
-              console.log(pizzasData);
+              setTimeout(async () => {
+              const data = await fetch('/assets/datas/pizzas.json');
+              var pizzas = await data.json();
+              return pizzas;
+              }, 10);
+              console.log(pizzas);
+              
             </script>
           </div>
           <div class="tab-pane" id="bar">
@@ -73,6 +76,7 @@
       </footer>
       <script src="./js/jquery-3.6.0.min.js"> </script>
       <script src="./js/tabs.js"> </script>
+      <script src="./js/main.js" type="module"> </script>
     </main>
   </body>
 </html>
